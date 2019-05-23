@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from './components/assets/logo.svg';
-import dummyData from './dummy-data';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
+// import PostContainer from './components/PostContainer/PostContainer';
+import { Provider } from './dummy-data';
 
-class App extends Component {
-  state = {
-    allPosts: dummyData
-  };
-  render() {
-    return (
+function App() {
+  return (
+    <Provider>
       <div className="app">
         <SearchBar />
-        <PostContainer allPosts={this.state.allPosts} />
-
-        <i className="fa fa-thumbs-up" />
+        {/* <PostContainer /> */}
       </div>
-    );
-  }
+    </Provider>
+  );
 }
 
 export default App;

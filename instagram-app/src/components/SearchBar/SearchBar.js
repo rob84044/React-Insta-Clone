@@ -1,29 +1,37 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import logo from '../assets/instaIcon.png';
+import './SearchBar.css';
 
-// class SearchBar extends Component {
-//   static propTypes = {
-//     //Use this area to verify prop data from app.js file
-//   };
 const SearchBar = () => {
   return (
     <div className="searchBar">
-      <div className="left">
-        <div className="fa-insta-logo">
-          <p>Im an instagram logo</p>
+      <div className="subBar">
+        <div className="left">
+          <i className="fab fa-instagram fa-2x" />
+          <div className="bar">&#124;</div>
+
+          <img className="name" src={logo} alt="Instagram Logo" />
         </div>
-        <div className="bar">im a bar</div>
-        <div className="insta-name">Instagram</div>
-      </div>
-      <div className="center">
-        <div className="search">
-          <input placeholder="mag Glass search" type="text" />
+        <div className="center">
+          <div className="search">
+            <input
+              className="searchable"
+              placeholder="&#128269; search"
+              type="text"
+            />
+          </div>
         </div>
-      </div>
-      <div className="right">
-        <div className="compass">compass</div>
-        <div className="heart">heart</div>
-        <div className="person-img">person</div>
+        <div className="right">
+          <div className="compass">
+            <i className="far fa-compass fa-2x" />
+          </div>
+          <div className="heart">
+            <i className="far fa-heart fa-2x" />
+          </div>
+          <div className="person-img">
+            <i className="far fa-user fa-2x" />
+          </div>
+        </div>
       </div>
     </div>
   );
