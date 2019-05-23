@@ -1,0 +1,42 @@
+import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+import CommentSection from '../CommentSection/CommentSection';
+
+import { Consumer } from '../../dummy-data';
+
+class Post extends Component {
+  render() {
+    const { uname, thumbNail, imageUrl, likes } = this.props.post;
+    return (
+      <Consumer>
+        {value => {
+          return (
+            <div className="outer-body">
+              <div className="aboutUser">
+                <img className="userPic" src={thumbNail} alt="User Image" />
+                <p className="userName">{uname}</p>
+              </div>
+              <div className="largePic">
+                <img className="postPic" src={imageUrl} alt="Post Image" />
+              </div>
+              <div className="userActions">
+                <i class="far fa-heart" />
+                <i class="far fa-comment" />
+              </div>
+              <div className="impact">
+                <p className="likes"> {likes}</p>
+              </div>
+              <div className="comments">
+                <div className="commentSection">
+                  <CommentSection />
+                </div>
+              </div>
+            </div>
+          );
+        }}
+      </Consumer>
+    );
+  }
+}
+
+export default Post;
