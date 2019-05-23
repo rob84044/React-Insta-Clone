@@ -6,10 +6,10 @@ import { Consumer } from '../../dummy-data';
 
 class Post extends Component {
   render() {
-    const { uname, thumbNail, imageUrl, likes } = this.props.post;
+    const { uname, thumbNail, imageUrl, likes, comments } = this.props.post;
     return (
       <Consumer>
-        {value => {
+        {() => {
           return (
             <div className="outer-body">
               <div className="aboutUser">
@@ -20,16 +20,14 @@ class Post extends Component {
                 <img className="postPic" src={imageUrl} alt="Post Image" />
               </div>
               <div className="userActions">
-                <i class="far fa-heart" />
-                <i class="far fa-comment" />
+                <i className="far fa-heart" />
+                <i className="far fa-comment" />
               </div>
               <div className="impact">
                 <p className="likes"> {likes}</p>
               </div>
-              <div className="comments">
-                <div className="commentSection">
-                  <CommentSection />
-                </div>
+              <div className="commentSection">
+                <CommentSection comments={comments} />
               </div>
             </div>
           );

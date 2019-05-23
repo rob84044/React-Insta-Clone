@@ -1,12 +1,26 @@
-// import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Post from './Post';
+import CommentSection from '../CommentSection/CommentSection';
+import { Consumer } from '../../dummy-data';
 
-// export default class PostContainer extends Component {
-//   static propTypes = {
-//     prop: PropTypes
-//   };
+class PostContainer extends Component {
+  render() {
+    return (
+      <Consumer>
+        {value => {
+          const { dummyData } = value;
+          console.log(dummyData, value);
+          return (
+            <React.Fragment>
+              {dummyData.map(post => (
+                <Post key={post.timestamp} post={post} />
+              ))}
+            </React.Fragment>
+          );
+        }}
+      </Consumer>
+    );
+  }
+}
 
-//   render() {
-//     return <div />;
-//   }
-// }
+export default PostContainer;
