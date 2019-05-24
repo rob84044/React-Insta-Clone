@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+.fullPost {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid red;
+  margin-top: 100px;
+  width: 60%;
+}
+
+.outer-body {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid blue;
+
+}
+
+.aboutUser {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  padding: 10px 0px;
+  margin: 0;
+  padding-left: 3%;
+}
+
+.aboutUser .userPic {
+  width: 15%;
+  min-width: 15%;
+  border-radius: 500px;
+  padding: 0;
+  margin: 0;
+
+}
+
+.aboutUser .userName {
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.largePic,
+.userActions,
+.impact,
+.commentSection {
+  padding-bottom: 10px;
+}
+
+.largePic {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.largePic .postPic {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.placeholder,
+.impact,
+.commentSection {
+  margin-left: 10px;
+}
+
+.userActions .far {
+  cursor: pointer;
+  width: 30px;
+}
+
+.userActions .b:hover {
+  color: rgb(224, 0, 224);
+}
+
+/*When the heart is clicked*/
+.userActions .clicked {
+  color: rgba(224, 0, 224, 0.705);
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(250, 26, 250);
+}
+
+.impact .likes strong {
+  font-size: .8rem;
+}

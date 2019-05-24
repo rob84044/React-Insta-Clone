@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post';
-import CommentSection from '../CommentSection/CommentSection';
+import './PostContainer.css';
 import { Consumer } from '../../dummy-data';
 
 class PostContainer extends Component {
@@ -11,11 +11,11 @@ class PostContainer extends Component {
           const { dummyData } = value;
           console.log(dummyData, value);
           return (
-            <React.Fragment>
+            <div className="fullPost">
               {dummyData.map(post => (
                 <Post key={post.timestamp} post={post} />
               ))}
-            </React.Fragment>
+            </div>
           );
         }}
       </Consumer>

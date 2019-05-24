@@ -8,10 +8,10 @@ import { Provider } from './dummy-data';
 function App() {
   return (
     <Provider>
-      <div className="app">
+      <section className="app">
         <SearchBar />
         <PostContainer />
-      </div>
+      </section>
     </Provider>
   );
 }

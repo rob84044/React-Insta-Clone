@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import uuid from 'uuid';
+import './CommentSection.css';
 
 const CommentSection = props => {
   const { comments } = props;
   return (
-    <div>
+    <div className="commentArea">
       {comments.map(comment => (
         <p key={uuid.v4()}>
           {' '}
