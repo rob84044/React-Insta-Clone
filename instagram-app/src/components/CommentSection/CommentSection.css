@@ -1,0 +1,19 @@
+.breathingSpace {
+  line-height: 3rem;
+}
+
+.addCommentField {
+  width: 70%;
+  text-align: left;
+  height: 40px;
+}
+
+::placeholder {
+  text-align: left;
+
+}
+
+button {
+  width: 30%;
+  height: 40px;
+}
