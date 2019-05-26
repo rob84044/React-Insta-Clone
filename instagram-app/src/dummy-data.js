@@ -12,7 +12,7 @@ export class Provider extends Component {
         imageUrl:
           'https://tk-assets.lambdaschool.com/69cf901b-f96d-466e-a745-ff2a01effac9_philz-image.jpg',
         likes: 400,
-        timestamp: 'July 17th 2017, 12:42:40 pm',
+        timestamp: 'May 25th 2018, 12:42:40 pm',
         comments: [
           {
             username: 'philzcoffee',
@@ -21,7 +21,7 @@ export class Provider extends Component {
           },
           {
             username: 'biancasaurus',
-            text: 'Looks delicious!'
+            text: 'Looksdelicious!'
           },
           {
             username: 'martinseludo',

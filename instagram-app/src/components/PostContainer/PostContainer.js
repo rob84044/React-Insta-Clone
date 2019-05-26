@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Post from './Post';
 import './PostContainer.css';
 import { Consumer } from '../../dummy-data';
+import PropTypes from 'prop-types';
 
 class PostContainer extends Component {
   render() {
@@ -22,5 +23,18 @@ class PostContainer extends Component {
     );
   }
 }
+
+PostContainer.propTypes = {
+  username: PropTypes.string,
+  thumbnailUrl: PropTypes.string,
+  imageUrl: PropTypes.string,
+  likes: PropTypes.string,
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string,
+      text: PropTypes.string
+    })
+  )
+};
 
 export default PostContainer;

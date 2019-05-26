@@ -7,7 +7,7 @@ const clickHandler = event => {
 };
 
 const CommentSection = props => {
-  const { comments } = props;
+  const { comments, timestamp } = props;
   return (
     <div className="commentArea">
       {comments.map(comment => (
@@ -16,6 +16,7 @@ const CommentSection = props => {
           <strong>{comment.username}</strong> {comment.text}
         </p>
       ))}
+      <p>{timestamp}</p>
       <div>
         <form name="submitComment" className="submitComment">
           <input

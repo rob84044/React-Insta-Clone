@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import { Consumer } from '../../dummy-data';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
+dayjs.extend(customParseFormat);
+dayjs.extend(relativeTime);
 
 class Post extends Component {
   render() {
@@ -11,8 +17,10 @@ class Post extends Component {
       thumbnailUrl,
       imageUrl,
       likes,
-      comments
+      comments,
+      timestamp
     } = this.props.post;
+    const time = dayjs(timestamp, 'MMMM Do YYYY, h:m:s a');
     return (
       <Consumer>
         {() => {
@@ -40,7 +48,10 @@ class Post extends Component {
                 </p>
               </div>
               <div className="commentBlock">
-                <CommentSection comments={comments} />
+                <CommentSection
+                  comments={comments}
+                  timestamp={time.fromNow()}
+                />
               </div>
             </div>
           );
