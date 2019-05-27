@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 
 const CommentInput = ({
   label,
@@ -7,23 +6,19 @@ const CommentInput = ({
   value,
   placeholder,
   type,
-  onChange,
-  error
+  addComment
 }) => {
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
-        className={classnames('form-control form-control-lg', {
-          'is-invalid': error
-        })}
+        className="submit-comment"
         placeholder={placeholder}
         name={name}
         value={value}
-        onChange={onChange}
+        onChange={addComment}
       />
-      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };
