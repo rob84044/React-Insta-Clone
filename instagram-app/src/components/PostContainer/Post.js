@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './PostContainer.css';
-import { Consumer } from '../../dummy-data';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
+
+import CommentSection from '../CommentSection/CommentSectionContainer';
+import UserSupplied from './UserSupplied';
 
 dayjs.extend(customParseFormat);
 dayjs.extend(relativeTime);
