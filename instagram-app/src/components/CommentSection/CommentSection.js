@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './CommentSection.css';
 import { Consumer } from '../../dummy-data';
 import CommentInput from './CommentInput';
-import CommentList from './CommentList';
+import CommentList from './Comment';
 
 const clickHandler = event => {
   event.preventDefault();
