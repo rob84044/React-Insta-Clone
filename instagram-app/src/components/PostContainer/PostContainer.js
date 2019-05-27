@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import Post from './Post';
 import './PostContainer.css';
-import { Consumer } from '../../dummy-data';
 import PropTypes from 'prop-types';
+import uuid from 'uuid';
 
 class PostContainer extends Component {
   render() {
+    console.log(dummyData, value, 'PostContainer.js');
     return (
-      <Consumer>
-        {value => {
-          const { dummyData } = value;
-          console.log(dummyData, value);
-          return (
-            <div className="fullPost">
-              {dummyData.map(post, index => (
-                <Post key={post.timestamp} index={index} post={post} />
-              ))}
-            </div>
-          );
-        }}
-      </Consumer>
+      <div className="posts-container-wrapper">
+        {props.posts.map(post => (
+          <Post key={uuid} post={post} />
+        ))}
+      </div>
     );
   }
 }

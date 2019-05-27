@@ -1,7 +1,7 @@
 import React from 'react';
 import './Posts.css';
 
-const PostHeader = props => {
+const PostHeader = () => {
   return (
     <div className="userSupplied">
       <div className="USWrapper">
