@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import './CommentSection.css';
 import CommentInput from './CommentInput';
 import Comment from './Comment';
-import dummyData from '../../dummy-data';
-
-const defaultState = {
-  posts: dummyData,
-  text: ''
-};
 
 class CommentSection extends Component {
   constructor(props) {
     super(props);
-    this.state = defaultState;
+    this.state = {
+      comments: this.props.comments,
+      comment: ''
+    };
   }
 
   componentDidMount() {
@@ -23,7 +20,7 @@ class CommentSection extends Component {
       });
     }
   }
-  comment = event => {
+  commentHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -37,18 +34,21 @@ class CommentSection extends Component {
 
   render() {
     const { timestamp, comment } = this.state;
+    console.log(this.state);
 
     return (
       <div className="commentArea">
-        <Comment comments={this.props.comments} />
+        {this.state.comments.map((comment, index) => (
+          <Comment comment={comment} key={index} />
+        ))}
+
         <p>{timestamp}</p>
         <div>
           <form onSubmit={this.addComment}>
             <CommentInput
-              name="comment"
-              placeholder="Enter comment.."
-              value={comment}
-              addComment={this.addComment}
+              submitcomment={this.addComment}
+              changecomment={this.commentHandler}
+              comment={this.state.comment}
             />
           </form>
         </div>

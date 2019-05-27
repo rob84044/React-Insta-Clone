@@ -27,6 +27,9 @@ dayjs.extend(relativeTime);
 // };
 
 class Post extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     const {
       username,

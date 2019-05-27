@@ -9,7 +9,7 @@ class PostContainer extends Component {
     return (
       <div className="posts-container-wrapper">
         {this.props.posts.map(post => (
-          <Post key={uuid} post={post} />
+          <Post key={uuid.v4()} post={post} />
         ))}
       </div>
     );

@@ -1,23 +1,15 @@
 import React from 'react';
 
-const CommentInput = ({
-  label,
-  name,
-  value,
-  placeholder,
-  type,
-  addComment
-}) => {
+const CommentInput = props => {
   return (
     <div className="form-group">
-      <label htmlFor={name}>{label}</label>
       <input
-        type={type}
+        type="text"
         className="submit-comment"
-        placeholder={placeholder}
-        name={name}
-        value={value}
-        addComment={addComment}
+        placeholder="Add Comment..."
+        name="comment"
+        submitcomment={props.submitcomment}
+        onChange={props.changecomment}
       />
     </div>
   );
