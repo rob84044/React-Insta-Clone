@@ -25,7 +25,7 @@ class Post extends Component {
       <div>
         return (
         <div className="outer-body">
-          <PostHeader username={username} thumbnailUrl={thumbnailUrl} />
+          <UserSupplied username={username} thumbnailUrl={thumbnailUrl} />
           <div className="largePic">
             <img className="postPic" src={imageUrl} alt="Post " />
           </div>
