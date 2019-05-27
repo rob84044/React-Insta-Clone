@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 const Context = React.createContext();
 
+const commentChanger = (state, action) => {
+  switch (action.type) {
+    case 'ADD_COMMENT':
+      return {
+        //this.setState
+        ...state,
+        dummyData: [action.payload, ...state.dummyData]
+      };
+    default:
+      return state;
+  }
+};
+
 export class Provider extends Component {
   state = {
     dummyData: [
@@ -83,7 +96,10 @@ export class Provider extends Component {
           }
         ]
       }
-    ]
+    ],
+    dispatch: action => {
+      this.setState(state => commentChanger(state, action));
+    }
   };
   render() {
     return (
