@@ -17,9 +17,13 @@ const CommentInput = ({
         placeholder={placeholder}
         name={name}
         value={value}
-        onChange={addComment}
+        addComment={addComment}
       />
     </div>
   );
+};
+
+CommentInput.defaultProp = {
+  type: 'text'
 };
 export default CommentInput;
