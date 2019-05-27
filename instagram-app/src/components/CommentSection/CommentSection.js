@@ -10,16 +10,39 @@ class CommentSection extends Component {
       comments: this.props.comments,
       comment: ''
     };
+    this.fetchData = this.fetchData.bind(this);
+    this.saveData = this.saveData.bind(this);
   }
 
   componentDidMount() {
-    const id = this.props.postId;
-    if (localStorage.getItem(id)) {
+    window.addEventListener('load', this.fetchData);
+    window.addEventListener('unload', this.saveData);
+  }
+  componentWillUnmount() {
+    window.addEventListener('load', this.fetchData);
+    window.addEventListener('unload', this.saveData);
+  }
+
+  saveData() {
+    localStorage.setItem(
+      this.props.postIndex,
+      JSON.stringify(this.state.comments)
+    );
+  }
+
+  fetchData() {
+    const persistedData = localStorage.getItem(this.props.postIndex);
+    if (persistedData !== null) {
       this.setState({
-        comments: JSON.parse(localStorage.getItem(this.props.postId))
+        comments: JSON.parse(persistedData)
+      });
+    } else {
+      this.setState({
+        comments: this.props.comments
       });
     }
   }
+
   commentHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -33,8 +56,8 @@ class CommentSection extends Component {
   };
 
   render() {
-    const { timestamp, comment } = this.state;
-    console.log(this.state);
+    const { timestamp } = this.state;
+    console.log(this.props, 'commentsection');
 
     return (
       <div className="commentArea">

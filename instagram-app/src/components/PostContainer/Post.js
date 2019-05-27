@@ -27,9 +27,9 @@ dayjs.extend(relativeTime);
 // };
 
 class Post extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     const {
       username,
@@ -39,7 +39,7 @@ class Post extends Component {
       comments,
       timestamp
     } = this.props.post;
-
+    console.log(this.props);
     const time = dayjs(timestamp, 'MMMM Do YYYY, h:m:s a');
 
     return (
