@@ -4,11 +4,27 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import CommentSection from '../CommentSection/CommentSectionContainer';
-import UserSupplied from './UserSupplied';
+import CommentSection from '../CommentSection/CommentSection';
 
 dayjs.extend(customParseFormat);
 dayjs.extend(relativeTime);
+
+// const UserSupplied = props => {
+//   const { thumbnailUrl, username } = props.Post;
+
+//   return (
+//     <div className="userSupplied">
+//       <div className="USWrapper">
+//         <img
+//           alt="Image provided by user"
+//           className="US-thumb"
+//           src={thumbnailUrl}
+//         />
+//       </div>
+//       <div>{username}</div>
+//     </div>
+//   );
+// };
 
 class Post extends Component {
   render() {
@@ -25,9 +41,18 @@ class Post extends Component {
 
     return (
       <div>
-        return (
         <div className="outer-body">
-          <UserSupplied username={username} thumbnailUrl={thumbnailUrl} />
+          <div className="userSupplied">
+            <div className="USWrapper">
+              <img
+                alt="Image provided by user"
+                className="US-thumb"
+                src={thumbnailUrl}
+              />
+            </div>
+            <div>{username}</div>
+          </div>
+          {/* <UserSupplied username={username} thumbnailUrl={thumbnailUrl} /> */}
           <div className="largePic">
             <img className="postPic" src={imageUrl} alt="Post " />
           </div>
@@ -47,11 +72,10 @@ class Post extends Component {
             <CommentSection
               comments={comments}
               timestamp={time.fromNow()}
-              postIndex={props.index}
+              postIndex={this.props.index}
             />
           </div>
         </div>
-        );
       </div>
     );
   }

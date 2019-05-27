@@ -6,10 +6,9 @@ import uuid from 'uuid';
 
 class PostContainer extends Component {
   render() {
-    console.log(dummyData, value, 'PostContainer.js');
     return (
       <div className="posts-container-wrapper">
-        {props.posts.map(post => (
+        {this.props.posts.map(post => (
           <Post key={uuid} post={post} />
         ))}
       </div>
