@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
 import './CommentSection.css';
 import { Consumer } from '../../dummy-data';
 import CommentInput from './CommentInput';
@@ -10,36 +9,6 @@ const clickHandler = event => {
 };
 
 class AddComment extends Component {
-  state = {
-    comment: '',
-    errors: {}
-  };
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onSubmit = (dispatch, e) => {
-    e.preventDefault();
-    const { comment } = this.state;
-
-    if (comment === '') {
-      this.setState({
-        errors: { comment: 'Are you sure you typed something?' }
-      });
-      return;
-    }
-
-    const newComment = {
-      id: uuid(),
-      comment,
-      errors: {}
-    };
-    dispatch({ type: 'ADD_COMMENT', payload: newComment });
-
-    this.setState({
-      comment: ''
-    });
-  };
   render() {
     const { timestamp, comment, errors } = this.state;
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import AddComment from '../CommentSection/AddComment';
+import AddComment from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import { Consumer } from '../../dummy-data';
 import dayjs from 'dayjs';
@@ -48,7 +48,11 @@ class Post extends Component {
                 </p>
               </div>
               <div className="commentBlock">
-                <AddComment comments={comments} timestamp={time.fromNow()} />
+                <CommentSection
+                  comments={comments}
+                  timestamp={time.fromNow()}
+                  postIndex={props.index}
+                />
               </div>
             </div>
           );

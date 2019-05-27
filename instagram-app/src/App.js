@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
-// import logo from './components/assets/logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
 import { Provider } from './dummy-data';
 
-const App = () => {
-  return (
-    <Provider>
-      <section className="app">
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: []
+    };
+  }
+  componentDidMount() {
+    this.setState({ posts: dummyData });
+  }
+  render() {
+    return (
+      <div className="App">
         <SearchBar />
-        <PostContainer />
-      </section>
-    </Provider>
-  );
-};
+        <PostsContainer posts={this.state.posts} />
+      </div>
+    );
+  }
+}
 
 export default App;

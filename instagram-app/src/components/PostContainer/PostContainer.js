@@ -13,8 +13,8 @@ class PostContainer extends Component {
           console.log(dummyData, value);
           return (
             <div className="fullPost">
-              {dummyData.map(post => (
-                <Post key={post.timestamp} post={post} />
+              {dummyData.map(post, index => (
+                <Post key={post.timestamp} index={index} post={post} />
               ))}
             </div>
           );
