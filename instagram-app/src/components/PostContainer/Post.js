@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import AddComment from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import { Consumer } from '../../dummy-data';
 import dayjs from 'dayjs';
@@ -20,44 +18,39 @@ class Post extends Component {
       comments,
       timestamp
     } = this.props.post;
+
     const time = dayjs(timestamp, 'MMMM Do YYYY, h:m:s a');
+
     return (
-      <Consumer>
-        {() => {
-          return (
-            <div className="outer-body">
-              <div className="aboutUser">
-                <img className="userPic" src={thumbnailUrl} alt="User " />
-                <p className="userName">
-                  <strong>{username}</strong>{' '}
-                </p>
-              </div>
-              <div className="largePic">
-                <img className="postPic" src={imageUrl} alt="Post " />
-              </div>
-              <div className="userActions">
-                <div className="placeholder">
-                  <i className="far fa-heart fa-lg b" />
-                  <i className="far fa-comment fa-lg b" />
-                </div>
-              </div>
-              <div className="impact">
-                <p className="likes">
-                  {' '}
-                  <strong>{likes} likes</strong>
-                </p>
-              </div>
-              <div className="commentBlock">
-                <CommentSection
-                  comments={comments}
-                  timestamp={time.fromNow()}
-                  postIndex={props.index}
-                />
-              </div>
+      <div>
+        return (
+        <div className="outer-body">
+          <PostHeader username={username} thumbnailUrl={thumbnailUrl} />
+          <div className="largePic">
+            <img className="postPic" src={imageUrl} alt="Post " />
+          </div>
+          <div className="userActions">
+            <div className="placeholder">
+              <i className="far fa-heart fa-lg b" />
+              <i className="far fa-comment fa-lg b" />
             </div>
-          );
-        }}
-      </Consumer>
+          </div>
+          <div className="impact">
+            <p className="likes">
+              {' '}
+              <strong>{likes} likes</strong>
+            </p>
+          </div>
+          <div className="commentBlock">
+            <CommentSection
+              comments={comments}
+              timestamp={time.fromNow()}
+              postIndex={props.index}
+            />
+          </div>
+        </div>
+        );
+      </div>
     );
   }
 }
