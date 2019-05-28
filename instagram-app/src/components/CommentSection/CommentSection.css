@@ -1,19 +1,35 @@
-.breathingSpace {
-  line-height: 3rem;
+.commentArea {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.addCommentField {
-  width: 70%;
+.comment-text {
+  padding: 8px 0px;
+  display: flex;
+  width: 100%;
+}
+
+.comment-text .username {
+  width: 25%;
+}
+
+.comment-text .comment {
+  width: 80%
+}
+
+.comment-text .username .user {
+  text-align: right;
+}
+
+.user {
+  margin-right: 25px;
+  font-weight: bolder;
+}
+
+.commentP {
   text-align: left;
-  height: 40px;
-}
-
-::placeholder {
-  text-align: left;
-
-}
-
-button {
-  width: 30%;
-  height: 40px;
 }

@@ -43,26 +43,28 @@ class Post extends Component {
     const time = dayjs(timestamp, 'MMMM Do YYYY, h:m:s a');
 
     return (
-      <div>
+      <div className="masterPost">
         <div className="outer-body">
           <div className="userSupplied">
             <div className="USWrapper">
               <img
-                alt="Image provided by user"
+                alt="provided by user"
                 className="US-thumb"
                 src={thumbnailUrl}
-              />
+                className="thumb"
+              />{' '}
+              <div className="username">
+                <strong> {username}</strong>
+              </div>
             </div>
-            <div>{username}</div>
           </div>
-          {/* <UserSupplied username={username} thumbnailUrl={thumbnailUrl} /> */}
           <div className="largePic">
             <img className="postPic" src={imageUrl} alt="Post " />
           </div>
           <div className="userActions">
             <div className="placeholder">
-              <i className="far fa-heart fa-lg b" />
-              <i className="far fa-comment fa-lg b" />
+              <i className="far fa-heart fa-2x p" />
+              <i className="far fa-comment fa-2x b" />
             </div>
           </div>
           <div className="impact">

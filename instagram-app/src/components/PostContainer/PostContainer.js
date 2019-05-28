@@ -2,19 +2,14 @@ import React, { Component } from 'react';
 import Post from './Post';
 import './PostContainer.css';
 import PropTypes from 'prop-types';
-import uuid from 'uuid';
 
 class PostContainer extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     console.log(this.props);
     return (
       <div className="posts-container-wrapper">
         {this.props.posts.map((post, index) => (
-          <Post key={index} index={index} post={post} />
+          <Post className="post" key={index} index={index} post={post} />
         ))}
       </div>
     );

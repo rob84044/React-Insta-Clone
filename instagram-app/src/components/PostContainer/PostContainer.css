@@ -2,98 +2,95 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
 }
 
-.fullPost {
+
+
+.posts-container-wrapper {
+  padding-top: 80px;
+  background-color: lightcyan;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  margin-top: 100px;
-  width: 60%;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.masterPost {
+  width: 100%;
+  margin: 10px 0px;
 }
 
 .outer-body {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  align-items: flex-start;
-  padding: 0;
+  Width: 60%;
+  background-color: lightgrey;
+
   margin: 0 auto;
-  width: 100%;
+}
+
+.userSupplied {
+  padding: 15px;
+  padding-left: 25px;
 
 }
 
-.aboutUser {
+.USWrapper {
   display: flex;
+  flex-direction: row;
+  width: 40%;
   align-items: center;
-  justify-content: flex-start;
-  height: 60px;
-  padding: 10px 0px;
-  margin: 0;
-  padding-left: 3%;
 }
 
-.aboutUser .userPic {
-  width: 15%;
-  min-width: 15%;
-  border-radius: 500px;
-  padding: 0;
-  margin: 0;
+.USWrapper .thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin-right: 25px;
 
-}
-
-.aboutUser .userName {
-  padding-left: 15px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.largePic,
-.userActions,
-.impact,
-.commentSection {
-  padding-bottom: 10px;
 }
 
 .largePic {
   width: 100%;
-  margin: 0 auto;
-  border-radius: 6px;
+
 }
 
-.largePic .postPic {
-  border-radius: 6px;
-  width: 100%;
+.postPic {
+  width: 90%;
+  border-radius: 20px;
+
 }
 
-.placeholder,
-.impact,
-.commentSection {
-  margin-left: 10px;
+.userActions {}
+
+.userActions .placeholder {
+  display: flex;
+  margin-left: 25px;
+
 }
 
-.userActions .far {
-  cursor: pointer;
-  width: 30px;
+.userActions .placeholder .far {
+  margin-right: 20px;
 }
 
-.userActions .b:hover {
-  color: rgb(224, 0, 224);
+.userActions .placeholder .p:hover {
+  color: pink;
 }
 
-/*When the heart is clicked*/
-.userActions .clicked {
-  color: rgba(224, 0, 224, 0.705);
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: rgb(250, 26, 250);
+.userActions .placeholder .b:hover {
+  color: white;
 }
 
-.impact .likes strong {
-  font-size: .8rem;
+.impact {
+  display: flex;
+  margin-left: 25px;
 }
+
+.impact .likes {}
 
 .commentBlock {
-  width: 90%;
-  padding-left: 10px;
-  margin-bottom: 30px;
+  background-color: rgb(255, 207, 207);
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin: 0 auto;
 }
