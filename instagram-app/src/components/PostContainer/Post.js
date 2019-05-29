@@ -27,9 +27,17 @@ dayjs.extend(relativeTime);
 // };
 
 class Post extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      likes: props.post.likes
+    };
+  }
+  loveIt = () => {
+    this.setState(prevState => {
+      return { likes: prevState.likes + 1 };
+    });
+  };
   render() {
     const {
       username,
@@ -63,14 +71,14 @@ class Post extends Component {
           </div>
           <div className="userActions">
             <div className="placeholder">
-              <i className="far fa-heart fa-2x p" />
+              <i className="far fa-heart fa-2x p" onClick={this.loveIt} />
               <i className="far fa-comment fa-2x b" />
             </div>
           </div>
           <div className="impact">
             <p className="likes">
               {' '}
-              <strong>{likes} likes</strong>
+              <strong>{this.state.likes} likes</strong>
             </p>
           </div>
           <div className="commentBlock">

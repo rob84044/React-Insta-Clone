@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/instaIcon.png';
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <div className="searchBar">
       <div className="subBar">
@@ -13,13 +13,18 @@ const SearchBar = () => {
           <img className="name" src={logo} alt="Instagram Logo" />
         </div>
         <div className="center">
-          <div className="search">
+          <form onSubmit={props.find} className="search">
             <input
               className="searchable"
               placeholder="&#128269; search"
+              value={props.search}
+              onChange={props.change}
               type="text"
             />
-          </div>
+            <div className="searchButton">
+              <button onSubmit={props.find}>enter</button>
+            </div>
+          </form>
         </div>
         <div className="right">
           <div className="compass">
