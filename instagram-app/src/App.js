@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostPage from './components/PostContainer/PostPage';
+import withAuthenticate from '../src/components/authentication/withAuthenticate';
 
 class App extends Component {
   render() {
-    return (
-      <div>
-        <PostPage />
-      </div>
-    );
+    const ComponentFromWithAuthenticate = withAuthenticate(PostPage);
+    return [<ComponentFromWithAuthenticate />];
   }
 }
 
