@@ -5,15 +5,20 @@ const withAuthenticate = Component =>
     constructor(props) {
       super(props);
       this.state = {
-        //Placeholder
+        LoggedIn: false
       };
     }
+    componentDidMount() {
+      if (!localStorage.getItem('user')) {
+        this.setState({ loggedIn: false });
+      } else {
+        this.setState({ loggedIn: true });
+      }
+    }
+
     render() {
-      return (
-        <React.Fragment>
-          <Component />
-        </React.Fragment>
-      );
+      if (this.state.loggedIn) return <PostsPage />;
+      return <LoginPage />;
     }
   };
 
