@@ -8,7 +8,8 @@ class CommentSection extends Component {
     super(props);
     this.state = {
       comments: this.props.comments,
-      comment: ''
+      comment: '',
+      username: localStorage.getItem('user')
     };
     this.fetchData = this.fetchData.bind(this);
     this.saveData = this.saveData.bind(this);
@@ -51,7 +52,7 @@ class CommentSection extends Component {
     e.preventDefault();
     const newComment = {
       text: this.state.comment,
-      username: this.props.username
+      username: this.state.username
     };
     const comments = this.state.comments.slice();
     comments.push(newComment);

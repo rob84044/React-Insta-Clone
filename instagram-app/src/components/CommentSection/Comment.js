@@ -6,10 +6,10 @@ const Comment = props => {
   return (
     <div className="comment-text">
       <div className="username">
-        <p className="user">{props.comment.username}</p>
-      </div>
-      <div className="comment">
-        <p className="commentP">{props.comment.text}</p>
+        <p className="user">
+          {props.comment.username}
+          <span className="commentP">{props.comment.text}</span>
+        </p>
       </div>
     </div>
   );
