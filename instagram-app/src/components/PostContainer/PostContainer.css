@@ -8,7 +8,7 @@
 
 .posts-container-wrapper {
   padding-top: 80px;
-  background-color: lightcyan;
+  background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,18 +19,17 @@
 .masterPost {
   width: 100%;
   margin: 10px 0px;
+  background-color: #FAFAFA;
 }
 
 .outer-body {
   Width: 60%;
-  background-color: lightgrey;
-
+  background-color: rgba(255, 255, 255, 1);
   margin: 0 auto;
 }
 
 .userSupplied {
-  padding: 15px;
-  padding-left: 25px;
+  margin: 15px 0px;margin-left: 25px;
 
 }
 
@@ -88,7 +87,7 @@
 .impact .likes {}
 
 .commentBlock {
-  background-color: rgb(255, 207, 207);
+  background-color: #FAFAFA;
   display: flex;
   justify-content: flex-start;
   width: 95%;

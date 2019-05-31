@@ -86,7 +86,6 @@ class Post extends Component {
               comments={comments}
               timestamp={time.fromNow()}
               postIndex={this.props.index}
-              postId={this.props.post.imageUrl}
             />
           </div>
         </div>
