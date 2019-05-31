@@ -6,9 +6,12 @@ import {
   FormGroup,
   Label,
   Input,
-  Button
+  Button,
+  FormFeedback,
+  FormText
 } from 'reactstrap';
 import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Login extends Component {
   constructor(props) {
@@ -51,6 +54,7 @@ class Login extends Component {
     const { email, password } = this.state;
     return (
       <Container className="Login">
+        <div className="breathingRoom" />
         <h2>Sign In</h2>
         <Form className="form" onSubmit={e => this.submitForm(e)}>
           <Col>

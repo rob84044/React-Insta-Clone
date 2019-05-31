@@ -49,7 +49,10 @@ class CommentSection extends Component {
 
   addComment = e => {
     e.preventDefault();
-    const newComment = { text: this.state.comment, username: 'ReactIsHard' };
+    const newComment = {
+      text: this.state.comment,
+      username: this.props.username
+    };
     const comments = this.state.comments.slice();
     comments.push(newComment);
     this.setState({ comments, comment: '' });
