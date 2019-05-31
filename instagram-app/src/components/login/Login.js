@@ -8,7 +8,7 @@ import {
   Input,
   Button
 } from 'reactstrap';
-import './App.css';
+import './Login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -38,15 +38,14 @@ class Login extends Component {
     const { target } = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
-    await this.setState({
-      [name]: value
-    });
+    await this.setState({ [name]: value });
   };
 
-  submitForm(e) {
-    e.preventDefault();
-    console.log(`Email: ${this.state.email}`);
-  }
+  submitForm = e => {
+    const user = this.state.email;
+    localStorage.setItem('user', user);
+    window.location.reload();
+  };
 
   render() {
     const { email, password } = this.state;
@@ -92,7 +91,7 @@ class Login extends Component {
               />
             </FormGroup>
           </Col>
-          <Button>Login</Button>
+          <Button onClick={this.submitForm}>Login</Button>
         </Form>
       </Container>
     );
