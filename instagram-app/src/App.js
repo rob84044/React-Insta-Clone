@@ -10,9 +10,11 @@ class App extends Component {
     this.state = {};
   }
   render() {
-    <div className="App">
-      return <ComponentFromWithAuthenticate />;
-    </div>;
+    return (
+      <div className="App">
+        <ComponentFromWithAuthenticate />;
+      </div>
+    );
   }
 }
 

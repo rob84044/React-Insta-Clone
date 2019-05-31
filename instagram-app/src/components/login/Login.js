@@ -91,7 +91,7 @@ class Login extends Component {
                 id="Password"
                 placeholder="********"
                 value={password}
-                onChange={e => this.handleChange(e)}
+                onChange={this.handleChange}
               />
             </FormGroup>
           </Col>
