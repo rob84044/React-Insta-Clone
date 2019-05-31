@@ -70,7 +70,7 @@ class CommentSection extends Component {
         ))}
 
         <p>{timestamp}</p>
-        <div>
+        <div className="addtext">
           <form onSubmit={this.addComment}>
             <CommentInput
               submitcomment={this.addComment}

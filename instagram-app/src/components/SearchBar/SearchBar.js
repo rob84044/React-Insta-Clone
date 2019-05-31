@@ -16,14 +16,15 @@ const SearchBar = props => {
           <form onSubmit={props.find} className="search">
             <input
               className="searchable"
-              placeholder="&#128269; search"
+              placeholder="search"
               value={props.search}
               onChange={props.change}
               type="text"
             />
-            <div className="searchButton">
-              <button onSubmit={props.find}>enter</button>
-            </div>
+
+            <button className="searchButton" onSubmit={props.find}>
+              &#128269;
+            </button>
           </form>
         </div>
         <div className="right">

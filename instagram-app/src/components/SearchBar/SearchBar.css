@@ -74,3 +74,17 @@ input {
   background-color: white;
   border-bottom: 1px solid lightgray;
 }
+
+.center {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.search {
+  width: 80%;
+}
+
+.searchButton {
+  width: 10%;
+}
