@@ -1,4 +1,6 @@
 import React from 'react';
+import PostPage from '../PostContainer/PostPage';
+import Login from '../login/Login';
 
 const withAuthenticate = Component =>
   class extends React.Component {
@@ -17,8 +19,8 @@ const withAuthenticate = Component =>
     }
 
     render() {
-      if (this.state.loggedIn) return <PostsPage />;
-      return <LoginPage />;
+      if (this.state.loggedIn) return <PostPage />;
+      return <Login />;
     }
   };
 
