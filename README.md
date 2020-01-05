@@ -10,6 +10,6 @@ This was an early project to get familiar with React, responsiveness, simple aut
 ## Background
 
 ​
-This is a simple site that utilizes regex to ensure that the email is infact an email and informs the user of such. If the email is now, it informs them is not as well. 
+This is a simple site that utilizes regex to ensure that the email is infact an email and informs the user of such. If the email is not, it informs them is not as well. 
 ​
 ​
