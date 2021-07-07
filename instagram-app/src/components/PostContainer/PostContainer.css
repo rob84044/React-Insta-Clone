@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.posts-container-wrapper {
+  padding-top: 80px;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.masterPost {
+  width: 100%;
+  margin: 10px 0px;
+  background-color: #FAFAFA;
+}
+
+.outer-body {
+  Width: 60%;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  box-shadow: 0px 0px 45px 6px;
+  border-radius: 30px;
+}
+
+.userSupplied {
+  margin: 15px 0px;
+  margin-left: 25px;
+  padding-top: 15px;
+}
+
+.USWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  align-items: center;
+}
+
+.USWrapper .thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin-right: 25px;
+
+}
+
+.largePic {
+  width: 100%;
+
+}
+
+.postPic {
+  width: 90%;
+  border-radius: 20px;
+
+}
+
+.userActions {}
+
+.userActions .placeholder {
+  display: flex;
+  margin-left: 25px;
+  padding-top: 15px;
+
+}
+
+.userActions .placeholder .far {
+  margin-right: 20px;
+}
+
+.userActions .placeholder .p:hover {
+  color: pink;
+}
+
+.userActions .placeholder .b:hover {
+  color: white;
+}
+
+.impact {
+  display: flex;
+  margin-left: 25px;
+}
+
+.impact .likes {}
+
+.commentBlock {
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: flex-start;
+  width: 95%;
+  border-radius: 20px;
+  margin: 0 auto;
+}
